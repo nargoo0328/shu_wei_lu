@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shu-Wei Lu - Research</title>
   <style>
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .header-photo {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        object-position: center bottom;
+        border-radius: 50%;
+        border: 2px solid #ccc;
+        transition: transform 0.3s ease;
+    }
     body {
       font-family: 'Helvetica Neue', sans-serif;
       margin: 0;
@@ -35,6 +52,9 @@
     .pub-authors {
       font-style: italic;
     }
+    .publication {
+    margin-bottom: 60px;
+    }
     a{
     color: #007acc;
     text-decoration: none;
@@ -60,23 +80,23 @@
 </head>
 <body>
 
-  <h1>Shu-Wei Lu</h1>
-  <p><strong>Research Scientist | Computer Vision </strong></p>
-  <p><a href="mailto:shuweilu@nycu.edu.tw">shuweilu@nycu.edu.tw</a> |
-    <a href="https://scholar.google.com/citations?user=QWXJB6sAAAAJ&hl=zh-TW">Google Scholar</a> | 
-    <a href="https://github.com/nargoo0328">GitHub</a></p>
-
-  <!-- <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-  </nav> -->
+    <div class="header">
+        <div>
+          <h1>Shu-Wei Lu</h1>
+          <p><strong>Research Scientist @ National Yang Ming Chiao Tung University </strong></p>
+          <p>
+            <a href="mailto:shuweilu@nycu.edu.tw">email</a> |
+            <a href="https://scholar.google.com/citations?user=QWXJB6sAAAAJ&hl=zh-TW">Google Scholar</a> | 
+            <a href="https://github.com/nargoo0328">GitHub</a>
+          </p>
+        </div>
+        <img src="images/me.jpg" alt="Shu-Wei Lu" class="header-photo" />
+      </div>
 
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I’m a research scientist working on 3D perception and scene reconstruction for autonomous systems. 
+      I’m a research scientist working on 3D perception and scene reconstruction for autonomous driving. 
       I’m interested in bridging the gap between visual understanding and downstream planning via 3D representations, simulation, and neural rendering.
     </p>
   </section>
@@ -102,7 +122,24 @@
 
   <section id="publications">
     <h2>Publications</h2>
-  
+    
+    <div class="publication">
+        <img src="images/GaussianLSS.gif" alt="Visual-ROI" style="width:200%; max-width:400px; margin-bottom:10px;" />
+        <p class="pub-title">GaussianLSS - Toward Real-world BEV Perception: Depth Uncertainty Estimation via Gaussian Splatting</p>
+        <p class="pub-authors">
+          <strong>Shu-Wei Lu</strong>, 
+          Yi-Hsuan Tsai, 
+          Yi-Ting Chen
+        </p>
+        <p><em>CVPR, 2025</em></p>
+        <p class="pub-links">
+          <a class="pub-link" href="https://hcis-lab.github.io/PF-BCP/">project page</a> / 
+          <a class="pub-link" href="https://arxiv.org/abs/2409.15846">paper</a> / 
+          <a class="pub-link" href="https://github.com/HCIS-Lab/PF-BCP">code</a>
+        </p>
+        <p>We propose GaussianLSS, an uncertainty-aware BEV perception framework that revisits the Lift-Splat-Shoot paradigm and enhances it with depth distribution modeling. By transforming per-pixel depth distributions into 3D Gaussians, our method constructs spatially-aware BEV features that are both efficient and accurate.</p>
+      </div>
+
     <div class="publication">
       <img src="images/PF_BCP.gif" alt="Visual-ROI" style="width:100%; max-width:400px; margin-bottom:10px;" />
       <p class="pub-title">Potential Field as Scene Affordance for Behavior Change-Based Visual Risk Object Identification</p>
@@ -113,12 +150,12 @@
         Yi-Ting Chen
       </p>
       <p><em>ICRA, 2025</em></p>
-      <p>We study behavior change-based visual risk object identification (Visual-ROI), a critical framework designed to detect potential hazards for intelligent driving systems.</p>
       <p class="pub-links">
         <a class="pub-link" href="https://hcis-lab.github.io/PF-BCP/">project page</a> / 
         <a class="pub-link" href="https://arxiv.org/abs/2409.15846">paper</a> / 
         <a class="pub-link" href="https://github.com/HCIS-Lab/PF-BCP">code</a>
       </p>
+      <p>We study behavior change-based visual risk object identification (Visual-ROI), a critical framework designed to detect potential hazards for intelligent driving systems.</p>
     </div>
   
     <div class="publication">
@@ -131,7 +168,6 @@
         Yi-Ting Chen
       </p>
       <p><em>CVPR, 2024</em></p>
-      <p>We use Action-slot to represent atomic activities. The learned attention can discover and localize atomic activities with only weak video labels and without using any perception module (e.g., object detector).</p>
       <p class="pub-links">
         <a class="pub-link" href="https://hcis-lab.github.io/Action-slot/">project page</a> / 
         <a class="pub-link" href="https://openaccess.thecvf.com/content/CVPR2024/html/Kung_Action-slot_Visual_Action-centric_Representations_for_Multi-label_Atomic_Activity_Recognition_in_CVPR_2024_paper.html">CVF</a> / 
@@ -139,6 +175,7 @@
         <a class="pub-link" href="https://github.com/HCIS-Lab/Action-slot/tree/main">code</a> / 
         <a class="pub-link" href="https://nycu1-my.sharepoint.com/:f:/g/personal/ychen_m365_nycu_edu_tw/EnRg1zT7CeZGg3Ju2TIP1j8B0NB0fCpYsjGQBc0Tcf2H6w?e=FGJvTc">TACO dataset</a>
       </p>
+      <p>We use Action-slot to represent atomic activities. The learned attention can discover and localize atomic activities with only weak video labels and without using any perception module (e.g., object detector).</p>
     </div>
   
     <div class="publication">
@@ -154,13 +191,13 @@
         Yi-Ting Chen
       </p>
       <p><em>ICRA, 2024</em></p>
-      <p>The FIRST benchmark that enables evaluation of various types of risk identification algorithms, including rule-based, trajectory-prediction-based, collision prediction, and behavior-change-based methods. We also assess the influence of risk identification on downstream driving tasks.</p>
       <p class="pub-links">
         <a class="pub-link" href="https://hcis-lab.github.io/RiskBench/">project page</a> / 
         <a class="pub-link" href="https://arxiv.org/abs/2312.01659">paper</a> / 
         <a class="pub-link" href="https://github.com/HCIS-Lab/RiskBench">code</a> / 
         <a class="pub-link" href="https://nycu1-my.sharepoint.com/personal/ychen_m365_nycu_edu_tw/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fychen%5Fm365%5Fnycu%5Fedu%5Ftw%2FDocuments%2FRiskBench&ga=1">dataset</a> 
       </p>
+      <p>The FIRST benchmark that enables evaluation of various types of risk identification algorithms, including rule-based, trajectory-prediction-based, collision prediction, and behavior-change-based methods. We also assess the influence of risk identification on downstream driving tasks.</p>
     </div>
   </section>  
 
